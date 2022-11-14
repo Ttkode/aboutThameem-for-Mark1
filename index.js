@@ -1,6 +1,7 @@
 var readlineSync = require('readline-sync')
 //installed readLineSync
 var score = 0
+
 var highScore = [
   {
     name: "Benzema",
@@ -10,7 +11,7 @@ var highScore = [
     name: "Ronaldo",
     score: 5
   }
-]
+] //declared high scores.
 
 var qOne = [{
   question: "Which is my favourite football club? ",
@@ -18,21 +19,22 @@ var qOne = [{
   }, {
   question: "Who is my god father? ",
   answer: "who?"
-   } , {
+  } , {
 question: "Which is my Favourite F1 team? ",
   answer: "williams"  
-    } , {
+  } , {
  question: "Who was the captain of Real Madrid in 21/22 season ",
   answer: "Marcelo"
-    }, {
+  }, {
  question: "Whats the name of my dad? ",
   answer: "Mahashook "
-   }
+  }
  ] // array
 
-function welcome()
+function welcome() //welcome function
+  
 {  
-console.log("Welcome to The.meme Quiz (hope you got the sarcasm🤤🤤)")
+console.log("Welcome to Tha.meme Quiz (hope you got the sarcasm🤤🤤)")
 console.log(".......................")
 
 var userName = readlineSync.question('Type your name, NOW!! ');
@@ -45,11 +47,8 @@ var right ="Good, i think you know me.."
 var wrong ="Nah, babe. Go type Thameem on google and see the answer there. "
 
 
-
-
-// creating funtion
-function questys(question, answer)
-  { var ansr = readlineSync.question(question)
+function questys(question, answer) //function
+{ var ansr = readlineSync.question(question)
 
    // answer check and score update
   if  (ansr === answer) {
@@ -64,24 +63,24 @@ function questys(question, answer)
     console.log("..............................")
     
   }
-  }
+}
 
 
-function play() {
-
+function play() 
+{
 for (var i=0; i<qOne.length; i++)
   { var qNow = qOne[i]
 questys(qNow.question, qNow.answer)
   } // loop
 }
 
-function endProduct() {
+function endProduct()
+{
 console.log(" Total Brownie Points: ", score, "/5")
 highScore.map(score => console.log(score.name, " : ", score.score))
 console.log("If you scored 5, inform me via mail or socials, i will update it here")
   
 console.log("Thank you for playing this game")
-
 }
 
 welcome ()
